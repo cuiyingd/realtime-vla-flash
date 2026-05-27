@@ -1119,7 +1119,7 @@ _HTML = """<!doctype html>
       stopPlayback(false);
       episodeMeta.textContent = `Loading episode ${episodeRef} and preparing cached frames...`;
       try {
-        const episodeQuery = /^\d+$/.test(episodeRef)
+        const episodeQuery = /^\\d+$/.test(episodeRef)
           ? `episode_idx=${encodeURIComponent(episodeRef)}`
           : `episode_key=${encodeURIComponent(episodeRef)}`;
         const data = await fetchJson(`/api/episode?dataset=${encodeURIComponent(datasetId)}&task=${encodeURIComponent(taskName)}&${episodeQuery}`);
